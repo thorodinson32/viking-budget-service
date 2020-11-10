@@ -16,7 +16,7 @@ public class AccountController {
     }
 
     @PostMapping("account")
-    public void createAccount(@RequestBody Account account) throws ExecutionException, InterruptedException {
+    public void createAccount(@RequestBody Account account) {
         accountService.insertAccount(account);
     }
 
@@ -26,13 +26,13 @@ public class AccountController {
     }
 
     @PutMapping("account}")
-    public void updateAccount(@RequestBody Account account) throws ExecutionException, InterruptedException {
+    public void updateAccount(@RequestBody Account account) {
         accountService.updateAccount(account);
     }
 
     @DeleteMapping("account/{accountId}")
-    public void deleteAccount(@PathVariable String accountId) throws ExecutionException, InterruptedException {
-        accountService.retrieveAccount(accountId);
+    public void deleteAccount(@PathVariable String accountId) {
+        accountService.deleteAccount(accountId);
     }
 
 

@@ -30,7 +30,7 @@ public class AccountService {
         return documentSnapshotApiFuture.get().toObject(Account.class);
     }
 
-    public void updateAccount(Account account) throws ExecutionException, InterruptedException {
+    public void updateAccount(Account account) {
         account.setModifyTs(Timestamp.now());
         firestore.collection("accounts").document(account.getId()).set(account, SetOptions.merge());
     }
