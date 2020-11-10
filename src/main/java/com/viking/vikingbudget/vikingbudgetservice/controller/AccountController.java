@@ -21,13 +21,18 @@ public class AccountController {
     }
 
     @GetMapping("account/{accountId}")
-    public Account createAccount(@PathVariable String accountId) throws ExecutionException, InterruptedException {
+    public Account getAccount(@PathVariable String accountId) throws ExecutionException, InterruptedException {
         return accountService.retrieveAccount(accountId);
     }
 
     @PutMapping("account}")
     public void updateAccount(@RequestBody Account account) throws ExecutionException, InterruptedException {
         accountService.updateAccount(account);
+    }
+
+    @DeleteMapping("account/{accountId}")
+    public void deleteAccount(@PathVariable String accountId) throws ExecutionException, InterruptedException {
+        accountService.retrieveAccount(accountId);
     }
 
 

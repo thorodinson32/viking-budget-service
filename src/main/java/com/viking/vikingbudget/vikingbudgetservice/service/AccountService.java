@@ -35,4 +35,8 @@ public class AccountService {
         firestore.collection("accounts").document(account.getId()).set(account, SetOptions.merge());
     }
 
+    public void deleteAccount(String accountId) {
+        firestore.collection("accounts").document(accountId).delete();
+    }
+
 }
